@@ -1,0 +1,30 @@
+/* Tailwind v4 engine — generates all utility classes used across JSX */
+@import 'tailwindcss';
+
+/* Master Stylesheet Imports */
+@import './styles/variables.css';
+@import './styles/components.css';
+@import './styles/3d-animations.css';
+@import './styles/2026-modern.css';
+
+/* Tailwind's own Preflight (in @layer base) already resets margin, padding
+   and box-sizing app-wide, correctly scoped inside a layer so it never
+   fights Tailwind's utility classes. A second, unlayered reset here would
+   win the cascade unconditionally (unlayered rules beat layered rules
+   regardless of specificity) and silently zero out every spacing utility
+   (padding, margin, space-between) in the app — do not add one back. */
+
+html, body {
+  background-color: #ffffff !important;
+  color: #17181a !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure root element spans full width */
+#root {
+  min-height: 100vh;
+  width: 100%;
+}

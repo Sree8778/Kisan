@@ -1,0 +1,50 @@
+/* Minimal reset: 3D tilt, laser glow and glass sheen removed to match the
+   flat catalog aesthetic. Classes are kept (many components still reference
+   them) but reduced to inert/neutral so nothing breaks — no visual tilt,
+   no glow, no gradient sheen. */
+
+.perspective-1000 {
+  perspective: none;
+}
+
+.tilt-card-3d {
+  transition: border-color 0.15s ease;
+}
+
+.tilt-content-layer,
+.tilt-badge-layer {
+  transform: none;
+}
+
+.tilt-card-3d::after {
+  content: none;
+}
+
+/* Scan sweep — kept functional (signals "AI is analyzing") but flat: a
+   plain accent-colored line, no neon box-shadow glow. */
+@keyframes laserSweep {
+  0% { top: 0%; opacity: 0.9; }
+  50% { top: 95%; opacity: 1; }
+  100% { top: 0%; opacity: 0.9; }
+}
+
+.laser-scanner-grid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #0f766e;
+  box-shadow: none;
+  animation: laserSweep 2.5s infinite ease-in-out;
+  z-index: 20;
+}
+
+.globe-3d-ring {
+  transform: none;
+  animation: none;
+}
+
+.isometric-layer-stack {
+  transform: none;
+  animation: none;
+}

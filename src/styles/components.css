@@ -1,0 +1,172 @@
+@import './variables.css';
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Flat card (was: frosted glass) */
+.kisan-glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: none;
+  transition: border-color 0.15s ease;
+}
+
+.kisan-glass-card:hover {
+  border-color: #d4d4cf;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Voice orb — subtle, no neon glow */
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.voice-orb-active {
+  animation: orbPulse 2.2s infinite ease-in-out;
+}
+
+/* Speedometer Arc Animation (kept — used by the SVG risk gauge, still a
+   legitimate data visualization, not a decorative glow effect) */
+@keyframes drawArc {
+  from { stroke-dashoffset: 280; }
+  to { stroke-dashoffset: var(--target-offset); }
+}
+
+.gauge-arc {
+  stroke-dasharray: 280;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+/* Bottom mobile nav bar — plain, no glass/glow */
+.floating-dock {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Standard flat card (alias family for kisan-glass-card) */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: none;
+  transition: border-color 0.15s ease;
+}
+
+.glass-card:hover {
+  border-color: #d4d4cf;
+}
+
+/* Primary / Secondary Action Buttons — flat, single accent color */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--text-main);
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: var(--text-main);
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-subtle);
+}
+
+/* Status Badges — flat, outlined */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+}
+
+.badge-emerald {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #b7e4dd;
+}
+
+.badge-amber {
+  background: #fff8e8;
+  color: #92650a;
+  border: 1px solid #f2dfad;
+}
+
+.badge-profit-safe {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid #b7e4dd;
+}
+
+.badge-glut-danger {
+  background: #fdf1f1;
+  color: #b3261e;
+  border: 1px solid #f2c9c7;
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.35s ease-out;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 6s linear infinite;
+}
+
+/* Hide scrollbar for horizontally-scrolling filter/category bars */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

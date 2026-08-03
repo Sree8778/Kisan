@@ -1,0 +1,16 @@
+:root {
+  /* Minimal light system — flat surfaces, no gradients, no glow */
+  --bg-main: #ffffff;
+  --bg-subtle: #f7f7f5;
+  --card-bg: #ffffff;
+  --text-main: #17181a;
+  --text-muted: #6b7280;
+  --border-color: #e5e5e0;
+
+  --accent: #0f766e;
+  --accent-hover: #0d5f59;
+  --accent-soft: #ecfaf7;
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
